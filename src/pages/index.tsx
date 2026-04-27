@@ -8,8 +8,8 @@ import { Footer } from '@/components/sections/Footer'
 import { useReveal } from '@/lib/useReveal'
 
 const SITE_URL = 'https://terranabota.com.br'
-const TITLE = 'Terra na Bota | Estiloso na fazenda. Selvagem na cidade.'
-const DESCRIPTION = 'Para quem vive entre a raiz da terra e a atitude da cidade. Pré-lançamento — entre na lista e receba acesso antecipado.'
+const TITLE = 'Terra na Bota | Estiloso na fazenda, selvagem na cidade'
+const DESCRIPTION = 'Botas para quem não escolhe um lado. Pré-lançamento. Quem entra na lista agora paga menos no dia que abrir.'
 
 const Home: NextPage = () => {
   useReveal()
@@ -22,12 +22,12 @@ const Home: NextPage = () => {
         <link rel="canonical" href={SITE_URL} />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Estiloso na fazenda ★ Selvagem na cidade" />
+        <meta property="og:title" content="Terra na Bota ★ Estiloso na fazenda. Selvagem na cidade." />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
 
         {/* Twitter */}
-        <meta name="twitter:title" content="Estiloso na fazenda ★ Selvagem na cidade" />
+        <meta name="twitter:title" content="Terra na Bota ★ Estiloso na fazenda. Selvagem na cidade." />
         <meta name="twitter:description" content={DESCRIPTION} />
       </Head>
 
