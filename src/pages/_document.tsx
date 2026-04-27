@@ -47,14 +47,11 @@ export default function Document() {
                   logo: 'https://terranabota.com.br/assets/logo/logo-white.svg',
                   sameAs: [
                     'https://instagram.com/useterranabota',
-                    'https://facebook.com/useterranabota',
-                    'https://tiktok.com/@useterranabota',
-                    'https://pinterest.com/useterranabota',
                   ],
                   contactPoint: {
                     '@type': 'ContactPoint',
                     email: 'contato@terranabota.com.br',
-                    contactType: 'customer service',
+                    contactType: 'atendimento ao cliente',
                     availableLanguage: 'Portuguese',
                   },
                 },
@@ -71,9 +68,13 @@ export default function Document() {
           }}
         />
 
-        {/* ── Fontes — preload crítico ── */}
+        {/* ── Fontes — preload crítico (não usar @import no CSS) ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap"
+        />
 
         {/* ── GA4 ── */}
         {GA_ID && (
@@ -118,6 +119,11 @@ export default function Document() {
         )}
       </Head>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add('js-ready')`,
+          }}
+        />
         <Main />
         <NextScript />
       </body>

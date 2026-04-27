@@ -12,15 +12,24 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  /* fallback text (span) — só aparece se a imagem falhar */
   font-family: var(--font-label);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.22em;
   color: var(--cafe);
-  text-decoration: none;
 }
 
-.logo:hover { color: var(--couro); }
+.logo:hover { opacity: 0.75; }
+
+.logoImg {
+  width: 140px;
+  height: auto;
+  display: block;
+}
 
 .content {
   max-width: 720px;

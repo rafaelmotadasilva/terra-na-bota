@@ -2,8 +2,7 @@
    TERRA ★ NA BOTA — Global Styles
    ═══════════════════════════════════════ */
 
-/* ── Fontes ── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap');
+/* Fontes carregadas via <link> em _document.tsx — não usar @import aqui */
 
 /*
   Arpona — fonte oficial da logo.
@@ -99,7 +98,9 @@ button {
 }
 
 /* ── Animações de reveal ── */
-.reveal {
+/* Sem JS: conteúdo visível. Com JS: _document.tsx adiciona .js-ready ao <html>
+   antes do primeiro paint, ativando a animação só quando seguro. */
+.js-ready .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition:
@@ -107,7 +108,7 @@ button {
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible {
+.js-ready .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }

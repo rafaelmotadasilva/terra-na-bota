@@ -13,7 +13,21 @@ const Privacidade: NextPage = () => {
 
       <div className={styles.page}>
         <header className={styles.header}>
-          <a href="/" className={styles.logo}>TERRA ★ NA BOTA</a>
+          {/* Fundo claro (--areia) → logo preta */}
+          <a href="/" className={styles.logo} aria-label="Terra na Bota — página inicial">
+            <img
+              src="/assets/logo/logo-black.svg"
+              alt="Terra na Bota"
+              className={styles.logoImg}
+              onError={(e) => {
+                const t = e.currentTarget
+                t.style.display = 'none'
+                const fb = t.nextElementSibling as HTMLElement
+                if (fb) fb.style.display = 'inline'
+              }}
+            />
+            <span style={{ display: 'none' }}>TERRA ★ NA BOTA</span>
+          </a>
         </header>
 
         <main className={styles.content}>
@@ -39,7 +53,7 @@ const Privacidade: NextPage = () => {
             <p>Seu e-mail é utilizado exclusivamente para:</p>
             <ul>
               <li>Comunicar o lançamento da marca e do produto</li>
-              <li>Enviar condições exclusivas de pré-venda para quem está na lista</li>
+              <li>Enviar condições especiais de pré-venda para quem está na lista</li>
               <li>Informar sobre novidades da Terra na Bota</li>
             </ul>
             <p>Seus dados <strong>não são compartilhados, vendidos ou cedidos</strong> a terceiros.</p>
