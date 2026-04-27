@@ -1,0 +1,232 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(105deg, rgba(27,20,14,0.96) 0%, rgba(27,20,14,0.82) 38%, rgba(27,20,14,0.25) 100%),
+    url('/assets/images/hero.jpg');
+  background-color: var(--cafe);
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 0;
+}
+
+/* Nav */
+.nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 32px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.navLogo { display: flex; align-items: center; }
+
+.navLogo img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+.navLogoText {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  color: var(--areia);
+}
+
+.navCta {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--areia);
+  border-bottom: 1px solid rgba(179,162,123,0.4);
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navCta:hover {
+  color: var(--caramelo);
+  border-color: var(--caramelo);
+}
+
+/* Conteúdo */
+.content {
+  position: relative;
+  z-index: 5;
+  padding: 0 52px;
+  max-width: 680px;
+}
+
+.kicker {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--caramelo);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kickerLine {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--caramelo);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* Títulos — Playfair Display */
+.h1 {
+  font-family: var(--font-titulo);
+  font-weight: 900;
+  font-size: clamp(54px, 7.5vw, 92px);
+  line-height: 0.93;
+  color: var(--areia);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.h1Accent {
+  font-family: var(--font-titulo);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(54px, 7.5vw, 92px);
+  line-height: 0.93;
+  color: var(--caramelo);
+  letter-spacing: -0.02em;
+}
+
+/* Tagline — Cormorant Garamond */
+.tagline {
+  margin-top: 32px;
+  font-family: var(--font-corpo);
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.6;
+  color: rgba(250,247,240,0.72);
+  max-width: 420px;
+  border-left: 2px solid var(--couro);
+  padding-left: 18px;
+}
+
+.tagline strong {
+  color: var(--areia);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Ações */
+.actions {
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--caramelo);
+  color: var(--preto);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 17px 36px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btnPrimary:hover {
+  background: var(--brasa);
+  transform: translateY(-2px);
+}
+
+.btnPrimary:active { transform: translateY(0); }
+
+.proof {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(250,247,240,0.4);
+}
+
+.proofDot {
+  width: 6px;
+  height: 6px;
+  background: var(--caramelo);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2.5s infinite;
+}
+
+.proofNum {
+  color: var(--areia);
+  font-weight: 600;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Scroll indicator 
+.scrollIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.scrollText {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250,247,240,0.3);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(179,162,123,0.4), transparent);
+}
+*/
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav { padding: 24px; }
+  .navCta { display: none; }
+  .content { padding: 0 24px; }
+  .scrollIndicator { left: 24px; }
+}

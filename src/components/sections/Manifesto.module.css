@@ -1,0 +1,78 @@
+.manifesto {
+  background: var(--areia);
+  color: var(--preto);
+  padding: 112px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto::before {
+  content: '★';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 300px;
+  color: rgba(59,47,38,0.04);
+  line-height: 1;
+  pointer-events: none;
+  font-family: var(--font-label);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.sidebar { padding-top: 10px; }
+
+.label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--couro);
+}
+
+.text h2 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.0;
+  color: var(--preto);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background: var(--caramelo);
+  margin-bottom: 28px;
+}
+
+.text p {
+  font-family: var(--font-corpo);
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.8;
+  color: var(--cafe);
+  max-width: 540px;
+}
+
+.text p + p { margin-top: 18px; }
+
+.text em {
+  color: var(--couro);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .manifesto { padding: 72px 24px; }
+  .inner { grid-template-columns: 1fr; gap: 24px; }
+  .manifesto::before { font-size: 160px; right: -10px; }
+}
