@@ -13,9 +13,9 @@ export function Manifesto() {
           </h2>
           <div className={`${styles.divider} reveal reveal-delay-2`} />
           <p className="reveal reveal-delay-2">
-            A Terra na Bota nasce do conflito que a maioria das marcas ignora.
-            Campo e cidade não são opostos — são{' '}
-            <em>dois lados do mesmo homem.</em>
+            Tem marca que pede pra você escolher. Campo ou cidade. Interior ou asfalto.
+            A Terra na Bota foi feita pra quem{' '}
+            <em>não reconhece essa divisão.</em>
           </p>
           <p className="reveal reveal-delay-3">
             Poeira e concreto. Couro e metal. Raiz e atitude.<br />

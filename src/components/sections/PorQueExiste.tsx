@@ -4,7 +4,7 @@ const itens = [
   {
     num: '01',
     titulo: 'As botas do mercado escolhem um lado',
-    texto: 'Ou country demais para a cidade. Ou urbanas demais para a fazenda. Nenhuma foi feita para quem vive nos dois.',
+    texto: 'Country demais pra calçada. Urbana demais pra fazenda. O cara que vive nos dois foi ignorado pelo mercado.',
   },
   {
     num: '02',
@@ -13,19 +13,19 @@ const itens = [
   },
   {
     num: '03',
-    titulo: 'O couro conta uma história',
-    texto: 'Cada marca de uso é parte de quem usa. Feita para envelhecer com caráter, não para descarte.',
+    titulo: 'Couro que dura',
+    texto: 'Cada arranhão tem endereço. Feita pra durar anos, não pra ser trocada na próxima temporada.',
   },
   {
     num: '04',
     titulo: 'Presença é inegociável',
-    texto: 'Uma bota que impõe respeito no ambiente em que estiver. Não por grito — por substância.',
+    texto: 'Uma bota que entra numa sala e não precisa se apresentar.',
   },
 ]
 
 const pilares = [
   { titulo: 'Raiz + Ambição', desc: 'Campo na essência, cidade na atitude' },
-  { titulo: 'Rústico + Urbano', desc: 'Couro que resiste em qualquer terreno' },
+  { titulo: 'Rústico + Urbano', desc: 'Couro que aguenta os dois lados da vida' },
   { titulo: 'Força + Presença', desc: 'O estilo que não pede licença' },
 ]
 

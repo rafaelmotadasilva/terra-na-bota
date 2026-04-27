@@ -53,14 +53,14 @@ export function CTAFinal() {
         </h2>
 
         <p className={`${styles.sub} reveal reveal-delay-1`}>
-          Quem entrar agora sabe antes de todo mundo.
-          <br /><strong>Acesso antecipado. Condições especiais de lançamento.</strong>
+          Quem entrar agora sabe antes.
+          <br /><strong>E paga menos quando abrir.</strong>
         </p>
 
         {status === 'success' ? (
           <div className={`${styles.success} reveal`}>
             <p className={styles.successTitle}>Você está dentro.</p>
-            <p className={styles.successSub}>Avisamos quando chegar a hora. Fique de olho.</p>
+            <p className={styles.successSub}>Você vai saber antes de todo mundo. Fica de olho.</p>
           </div>
         ) : (
           <form
