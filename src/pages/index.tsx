@@ -22,13 +22,22 @@ const Home: NextPage = () => {
         <link rel="canonical" href={SITE_URL} />
 
         {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Terra na Bota" />
+        <meta property="og:locale" content="pt_BR" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Terra na Bota — Estiloso na fazenda. Selvagem na cidade." />
 
         {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.jpg`} />
       </Head>
 
       <main>
