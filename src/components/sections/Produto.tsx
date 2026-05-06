@@ -58,7 +58,7 @@ export function Produto() {
           </div>
           <div className={styles.imgWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1558412915-9db18f878b23?w=800&q=85&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1608256264403-74a5ab98311e?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente natural"
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
