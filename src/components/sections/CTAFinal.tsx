@@ -60,9 +60,12 @@ export function CTAFinal() {
         </p>
 
         {status === 'success' ? (
-          <div className={`${styles.success} reveal`}>
-            <p className={styles.successTitle}>Você está dentro.</p>
-            <p className={styles.successSub}>Você vai saber antes de todo mundo. Fica de olho.</p>
+          <div className={styles.success}>
+            <p className={styles.successTitle}>
+              Você está dentro.{' '}
+              <span style={{ color: 'var(--caramelo)' }}>★</span>
+            </p>
+            <p className={styles.successSub}>Avisamos quando chegar a hora. Fique de olho.</p>
           </div>
         ) : (
           <form
