@@ -1,0 +1,153 @@
+.section {
+  background: var(--preto);
+  padding: 112px 52px;
+  position: relative;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Texto / Esquerda ── */
+
+.label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--areia-cinza);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.labelLine {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--areia-cinza);
+  opacity: 0.4;
+}
+
+.titulo {
+  font-family: var(--font-titulo);
+  font-weight: 900;
+  font-size: clamp(40px, 4.5vw, 60px);
+  line-height: 0.95;
+  color: var(--areia);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.desc {
+  font-family: var(--font-corpo);
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.6;
+  color: rgba(250,247,240,0.5);
+  margin-bottom: 48px;
+}
+
+/* ── Specs ── */
+
+.specs {
+  list-style: none;
+  border-top: 1px solid rgba(179,162,123,0.15);
+  margin-bottom: 36px;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(179,162,123,0.1);
+}
+
+.specLabel {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,247,240,0.35);
+  flex-shrink: 0;
+}
+
+.specValor {
+  font-family: var(--font-corpo);
+  font-size: 17px;
+  color: var(--areia);
+  text-align: right;
+}
+
+/* ── Badge ── */
+
+.badge {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250,247,240,0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--caramelo);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ── Imagens / Direita ── */
+
+.imagens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.imgWrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--cafe);
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* ── Responsivo ── */
+
+@media (max-width: 768px) {
+  .section { padding: 72px 24px; }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .imagens {
+    grid-template-columns: 1fr;
+  }
+
+  .imgWrap { aspect-ratio: 3 / 4; }
+}

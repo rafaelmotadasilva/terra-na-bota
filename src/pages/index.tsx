@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Hero } from '@/components/sections/Hero'
 import { Manifesto } from '@/components/sections/Manifesto'
 import { PorQueExiste } from '@/components/sections/PorQueExiste'
+import { Produto } from '@/components/sections/Produto'
 import { CTAFinal } from '@/components/sections/CTAFinal'
 import { Footer } from '@/components/sections/Footer'
 import { useReveal } from '@/lib/useReveal'
@@ -44,6 +45,7 @@ const Home: NextPage = () => {
         <Hero />
         <Manifesto />
         <PorQueExiste />
+        <Produto />
         <CTAFinal />
       </main>
 
