@@ -49,7 +49,7 @@ export function Produto() {
         <div className={`${styles.imagens} reveal reveal-delay-2`}>
           <div className={styles.imgWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1542838687-3b96f76e49b4?w=800&q=85&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1577387280394-12fd9389ac86?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente urbano"
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
@@ -58,7 +58,7 @@ export function Produto() {
           </div>
           <div className={styles.imgWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=85&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1558412915-9db18f878b23?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente natural"
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
