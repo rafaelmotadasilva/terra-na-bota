@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import styles from './CTAFinal.module.css'
+import { useLeadsCount } from '@/lib/useLeadsCount'
 
 export function CTAFinal() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [lgpd, setLgpd] = useState(false)
   const [lgpdError, setLgpdError] = useState(false)
+  const count = useLeadsCount()
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -126,6 +128,15 @@ export function CTAFinal() {
               Lançamento limitado · Acesso antecipado · Sem spam
             </p>
           </form>
+        )}
+
+        {count !== null && count > 0 && (
+          <div className={styles.counter}>
+            <span className={styles.counterDot} />
+            <span>
+              <span className={styles.counterNum}>{count}</span> pessoas na lista — lançamento limitado
+            </span>
+          </div>
         )}
 
       </div>
