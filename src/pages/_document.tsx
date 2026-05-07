@@ -16,7 +16,8 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* ── Meta Tags SEO ── */}
-        <meta name="robots" content="index, follow" />
+        {/* robots não declarado globalmente: default do Google é "index, follow".
+            Páginas noindex declaram explicitamente via next/head (evita duplicata). */}
         <meta name="author" content="Terra na Bota" />
         <meta name="theme-color" content="#3B2F26" />
 

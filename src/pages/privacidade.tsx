@@ -8,6 +8,7 @@ const Privacidade: NextPage = () => {
       <Head>
         <title>Política de Privacidade | Terra na Bota</title>
         <meta name="description" content="Política de privacidade da Terra na Bota. Saiba como tratamos seus dados." />
+        <link rel="canonical" href="https://terranabota.com.br/privacidade" />
         <meta name="robots" content="noindex, follow" />
       </Head>
 

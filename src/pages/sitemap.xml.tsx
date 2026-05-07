@@ -2,9 +2,10 @@ import type { GetServerSideProps } from 'next'
 
 const SITE_URL = 'https://terranabota.com.br'
 
+// Incluir apenas páginas indexáveis.
+// /privacidade tem meta noindex — excluída para evitar sinal contraditório.
 const pages = [
-  { path: '',           changefreq: 'weekly',  priority: '1.0' },
-  { path: '/privacidade', changefreq: 'monthly', priority: '0.3' },
+  { path: '', changefreq: 'weekly', priority: '1.0' },
 ]
 
 const Sitemap = () => null
