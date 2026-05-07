@@ -5,7 +5,7 @@
   min-height: 600px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -57,9 +57,10 @@
 .content {
   position: relative;
   z-index: 5;
-  text-align: left;
+  text-align: center;
   padding: 0 52px;
-  max-width: 560px;
+  max-width: 720px;
+  width: 100%;
 }
 
 .kicker {
@@ -72,7 +73,7 @@
   margin-bottom: 22px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -108,7 +109,7 @@
 
 /* Tagline — Cormorant Garamond */
 .tagline {
-  margin: 32px 0 0;
+  margin: 32px auto 0;
   font-family: var(--font-corpo);
   font-size: clamp(18px, 1.8vw, 22px);
   line-height: 1.6;
@@ -127,7 +128,7 @@
   margin-top: 44px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 28px;
   flex-wrap: wrap;
 }

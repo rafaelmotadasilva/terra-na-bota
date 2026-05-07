@@ -28,7 +28,7 @@
   flex-shrink: 0;
 }
 
-.logo img { display: block; height: 20px; width: auto; }
+.logo img { display: block; height: 18px; width: auto; }
 
 .logoText {
   font-family: var(--font-label);
@@ -133,7 +133,7 @@
 /* Breakpoints */
 @media (max-width: 768px) {
   .inner { padding: 0 24px; height: 60px; }
-  .logo img { height: 18px; }
+  .logo img { height: 16px; }
   .nav { display: none; }
   .hamburger { display: flex; }
 }
