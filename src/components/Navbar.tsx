@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 
-const leftLinks = [
+const links: { label: string; href: string; cta?: boolean }[] = [
   { label: 'A Marca', href: '#manifesto' },
   { label: 'Por que existe', href: '#por-que-existe' },
-]
-
-const rightLinks: { label: string; href: string; cta?: boolean }[] = [
   { label: 'O Produto', href: '#produto' },
   { label: 'Lista de espera', href: '#lista', cta: true },
 ]
-
-const allLinks = [...leftLinks, ...rightLinks]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -26,22 +21,11 @@ export function Navbar() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} role="banner">
       <div className={styles.inner}>
-
-        {/* Links da esquerda */}
-        <nav className={styles.navLeft} aria-label="Navegação principal">
-          {leftLinks.map((l) => (
-            <a key={l.href} href={l.href} className={styles.link}>
-              {l.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Logo centralizada absolutamente */}
         <a href="/" className={styles.logo} aria-label="Terra na Bota — página inicial">
           <img
             src="/assets/logo/logo-white.svg"
             alt="Terra na Bota"
-            height={16}
+            height={22}
             onError={(e) => {
               const t = e.currentTarget
               t.style.display = 'none'
@@ -54,29 +38,25 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Links da direita + hamburguer */}
-        <div className={styles.navRight}>
-          <nav className={styles.navRightLinks} aria-label="Navegação secundária">
-            {rightLinks.map((l) => (
-              <a key={l.href} href={l.href} className={l.cta ? styles.linkCta : styles.link}>
-                {l.label}
-              </a>
-            ))}
-          </nav>
+        <nav className={styles.nav} aria-label="Navegação principal">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className={l.cta ? styles.linkCta : styles.link}>
+              {l.label}
+            </a>
+          ))}
+        </nav>
 
-          <button
-            className={`${styles.hamburger} ${open ? styles.open : ''}`}
-            onClick={() => setOpen(!open)}
-            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-          >
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-          </button>
-        </div>
-
+        <button
+          className={`${styles.hamburger} ${open ? styles.open : ''}`}
+          onClick={() => setOpen(!open)}
+          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
       </div>
 
       <nav
@@ -85,7 +65,7 @@ export function Navbar() {
         aria-label="Menu mobile"
         aria-hidden={!open}
       >
-        {allLinks.map((l) => (
+        {links.map((l) => (
           <a
             key={l.href}
             href={l.href}

@@ -14,7 +14,6 @@
 }
 
 .inner {
-  position: relative;
   padding: 0 52px;
   height: 72px;
   display: flex;
@@ -22,19 +21,13 @@
   justify-content: space-between;
 }
 
-/* Logo — centralizada absolutamente */
+/* Logo */
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  opacity: 0.9;
-  transition: opacity 0.2s;
 }
 
-.logo:hover { opacity: 1; }
 .logo img { display: block; height: 16px; width: auto; }
 
 .logoText {
@@ -45,21 +38,8 @@
   color: var(--areia);
 }
 
-/* Links da esquerda */
-.navLeft {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-/* Links da direita + hamburguer */
-.navRight {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.navRightLinks {
+/* Desktop nav */
+.nav {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -94,7 +74,7 @@
 
 .linkCta:hover { background: var(--brasa); color: var(--preto); }
 
-/* Hamburguer */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -122,7 +102,7 @@
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile nav */
+/* Mobile nav — height-based transition for smooth open/close */
 .mobileNav {
   overflow: hidden;
   max-height: 0;
@@ -150,11 +130,10 @@
   background: rgba(245, 178, 85, 0.05);
 }
 
-/* Mobile — logo centralizada, hamburguer à direita */
+/* Breakpoints */
 @media (max-width: 768px) {
-  .inner { padding: 0 24px; height: 60px; justify-content: flex-end; }
+  .inner { padding: 0 24px; height: 60px; }
   .logo img { height: 14px; }
-  .navLeft { display: none; }
-  .navRightLinks { display: none; }
+  .nav { display: none; }
   .hamburger { display: flex; }
 }
