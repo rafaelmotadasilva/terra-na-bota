@@ -5,7 +5,7 @@
   min-height: 600px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
@@ -26,7 +26,7 @@
 
 .panelRight {
   flex: 1;
-  background-image: url('https://images.unsplash.com/photo-1608256255256-411200dde1ee?w=960&q=85&auto=format&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1608256264403-74a5ab98311e?w=960&q=85&auto=format&fit=crop&crop=center');
   background-color: var(--cafe);
   background-size: cover;
   background-position: center center;
@@ -57,10 +57,9 @@
 .content {
   position: relative;
   z-index: 5;
-  text-align: center;
+  text-align: left;
   padding: 0 52px;
-  max-width: 720px;
-  width: 100%;
+  max-width: 560px;
 }
 
 .kicker {
@@ -73,7 +72,7 @@
   margin-bottom: 22px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
 }
 
@@ -109,7 +108,7 @@
 
 /* Tagline — Cormorant Garamond */
 .tagline {
-  margin: 32px auto 0;
+  margin: 32px 0 0;
   font-family: var(--font-corpo);
   font-size: clamp(18px, 1.8vw, 22px);
   line-height: 1.6;
@@ -128,7 +127,7 @@
   margin-top: 44px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 28px;
   flex-wrap: wrap;
 }
@@ -155,13 +154,43 @@
 
 .btnPrimary:active { transform: translateY(0); }
 
+/* Contador de leads */
+.proof {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(250, 247, 240, 0.5);
+}
+
+.proofDot {
+  width: 6px;
+  height: 6px;
+  background: var(--caramelo);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2.5s infinite;
+}
+
+.proofNum {
+  color: var(--areia);
+  font-weight: 600;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .panels { flex-direction: column; }
   .panelLeft  { flex: none; height: 50vh; width: 100%; }
   .panelRight { flex: none; height: 50vh; width: 100%; }
 
-  /* Linha vira horizontal no ponto de divisão dos painéis */
   .divider {
     left: 0;
     right: 0;
@@ -171,5 +200,5 @@
     height: 1px;
   }
 
-  .content { padding: 0 24px; }
+  .content { padding: 0 24px; max-width: 100%; }
 }

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 
-const links = [
+const links: { label: string; href: string; cta?: boolean }[] = [
   { label: 'A Marca', href: '#manifesto' },
   { label: 'Por que existe', href: '#por-que-existe' },
   { label: 'O Produto', href: '#produto' },
-  { label: 'Lista de espera', href: '#lista' },
+  { label: 'Lista de espera', href: '#lista', cta: true },
 ]
 
 export function Navbar() {
@@ -40,7 +40,7 @@ export function Navbar() {
 
         <nav className={styles.nav} aria-label="Navegação principal">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className={styles.link}>
+            <a key={l.href} href={l.href} className={l.cta ? styles.linkCta : styles.link}>
               {l.label}
             </a>
           ))}

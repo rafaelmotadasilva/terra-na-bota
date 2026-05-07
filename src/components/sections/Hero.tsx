@@ -1,6 +1,9 @@
 import styles from './Hero.module.css'
+import { useLeadsCount } from '@/lib/useLeadsCount'
 
 export function Hero() {
+  const count = useLeadsCount()
+
   return (
     <section className={styles.hero} id="topo">
       {/* Dois painéis de fundo */}
@@ -15,12 +18,11 @@ export function Hero() {
       {/* Gradiente de legibilidade */}
       <div className={styles.overlay} aria-hidden="true" />
 
-      {/* Conteúdo centralizado sobre os dois painéis */}
+      {/* Conteúdo sobre o painel esquerdo */}
       <div className={styles.content}>
         <p className={styles.kicker}>
           <span className={styles.kickerLine} />
           Pré-lançamento
-          <span className={styles.kickerLine} />
         </p>
 
         <h1 className={styles.h1}>
@@ -44,6 +46,13 @@ export function Hero() {
             </svg>
           </a>
         </div>
+
+        {count !== null && count > 0 && (
+          <p className={styles.proof}>
+            <span className={styles.proofDot} />
+            <span><span className={styles.proofNum}>{count}</span> pessoas já na lista</span>
+          </p>
+        )}
       </div>
     </section>
   )
