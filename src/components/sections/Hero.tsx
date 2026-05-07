@@ -3,13 +3,24 @@ import styles from './Hero.module.css'
 export function Hero() {
   return (
     <section className={styles.hero} id="topo">
-      <div className={styles.heroBg} />
+      {/* Dois painéis de fundo */}
+      <div className={styles.panels} aria-hidden="true">
+        <div className={styles.panelLeft} />
+        <div className={styles.panelRight} />
+      </div>
 
-      {/* Conteúdo */}
+      {/* Linha divisória central */}
+      <div className={styles.divider} aria-hidden="true" />
+
+      {/* Gradiente de legibilidade */}
+      <div className={styles.overlay} aria-hidden="true" />
+
+      {/* Conteúdo centralizado sobre os dois painéis */}
       <div className={styles.content}>
         <p className={styles.kicker}>
           <span className={styles.kickerLine} />
           Pré-lançamento
+          <span className={styles.kickerLine} />
         </p>
 
         <h1 className={styles.h1}>
@@ -34,13 +45,6 @@ export function Hero() {
           </a>
         </div>
       </div>
-
-      {/* Scroll indicator 
-      <div className={styles.scrollIndicator} aria-hidden="true">
-        <span className={styles.scrollText}>Rolar</span>
-        <span className={styles.scrollLine} />
-      </div>
-      */}
     </section>
   )
 }
