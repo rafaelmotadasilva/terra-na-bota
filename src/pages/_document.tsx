@@ -1,12 +1,24 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || ''
 
 export default function Document() {
   return (
     <Html lang="pt-BR">
       <Head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVD28ZXR7S" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WVD28ZXR7S');
+`,
+          }}
+        />
+
         {/* ── Charset & Viewport já injetados pelo Next.js ── */}
 
         {/* ── Favicon ── */}
@@ -66,28 +78,6 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap"
         />
-
-        {/* ── GA4 ── */}
-        {GA_ID && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_ID}', {
-                    page_path: window.location.pathname,
-                  });
-                `,
-              }}
-            />
-          </>
-        )}
 
         {/* ── Meta Pixel ── */}
         {META_PIXEL_ID && (
