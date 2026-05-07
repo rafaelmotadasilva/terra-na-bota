@@ -13,7 +13,7 @@
   inset: 0;
   background-image:
     linear-gradient(105deg, rgba(27,20,14,0.96) 0%, rgba(27,20,14,0.82) 38%, rgba(27,20,14,0.25) 100%),
-    url('/assets/images/hero.jpg');
+    url('https://images.unsplash.com/photo-1577387212158-52feac8b09c5?w=1920&q=85&auto=format&fit=crop&crop=center');
   background-color: var(--cafe);
   background-size: cover;
   background-position: center 30%;

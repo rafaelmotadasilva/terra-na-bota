@@ -2,7 +2,7 @@ import styles from './Manifesto.module.css'
 
 export function Manifesto() {
   return (
-    <section className={styles.manifesto}>
+    <section className={styles.manifesto} id="manifesto">
       <div className={styles.inner}>
         <div className={styles.sidebar}>
           <p className={`${styles.label} reveal`}>★ Terra ★ Cidade</p>

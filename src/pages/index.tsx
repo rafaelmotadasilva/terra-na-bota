@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
+import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { Manifesto } from '@/components/sections/Manifesto'
 import { PorQueExiste } from '@/components/sections/PorQueExiste'
@@ -41,6 +42,7 @@ const Home: NextPage = () => {
         <meta name="twitter:image" content={`${SITE_URL}/og-image.jpg`} />
       </Head>
 
+      <Navbar />
       <main>
         <Hero />
         <Manifesto />

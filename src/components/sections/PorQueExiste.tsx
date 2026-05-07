@@ -31,7 +31,7 @@ const pilares = [
 
 export function PorQueExiste() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="por-que-existe">
       <div className={styles.inner}>
         <div className={`${styles.header} reveal`}>
           <h2>Por que<br />existe.</h2>

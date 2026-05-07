@@ -1,0 +1,124 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.header.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 52px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img { display: block; height: 22px; width: auto; }
+
+.logoText {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--areia);
+}
+
+/* Desktop nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.link {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--areia);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.link:hover { color: var(--caramelo); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--areia);
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav — height-based transition for smooth open/close */
+.mobileNav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  background: rgba(26, 26, 26, 0.97);
+  border-top: 1px solid rgba(179, 162, 123, 0.1);
+}
+
+.mobileNavOpen { max-height: 320px; }
+
+.mobileLink {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--areia);
+  padding: 14px 24px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobileLink:hover {
+  color: var(--caramelo);
+  background: rgba(245, 178, 85, 0.05);
+}
+
+/* Breakpoints */
+@media (max-width: 768px) {
+  .inner { padding: 0 24px; height: 60px; }
+  .nav { display: none; }
+  .hamburger { display: flex; }
+}

@@ -2,29 +2,8 @@ import styles from './Hero.module.css'
 
 export function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="topo">
       <div className={styles.heroBg} />
-
-      {/* Nav */}
-      <nav className={styles.nav}>
-        <a href="/" className={styles.navLogo} aria-label="Terra na Bota — página inicial">
-          <img
-            src="/assets/logo/logo-white.svg"
-            alt="Terra na Bota"
-            height={26}
-            onError={(e) => {
-              const t = e.currentTarget
-              t.style.display = 'none'
-              const fallback = t.nextElementSibling as HTMLElement
-              if (fallback) fallback.style.display = 'block'
-            }}
-          />
-          <span className={styles.navLogoText} style={{ display: 'none' }}>
-            TERRA ★ NA BOTA
-          </span>
-        </a>
-        <a href="#lista" className={styles.navCta}>Reservar meu lugar</a>
-      </nav>
 
       {/* Conteúdo */}
       <div className={styles.content}>

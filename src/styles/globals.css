@@ -128,9 +128,11 @@ button {
   }
 }
 
+/* Navbar fixa — offset para âncoras não ficarem escondidas */
+section[id] { scroll-margin-top: 72px; }
+
 /* ── Responsivo base ── */
 @media (max-width: 768px) {
-  :root {
-    --section-padding: 72px 24px;
-  }
+  :root { --section-padding: 72px 24px; }
+  section[id] { scroll-margin-top: 60px; }
 }

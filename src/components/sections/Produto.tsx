@@ -11,7 +11,7 @@ const specs = [
 
 export function Produto() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="produto">
       <div className={styles.inner}>
 
         {/* Esquerda — texto e specs */}
@@ -22,7 +22,7 @@ export function Produto() {
           </p>
 
           <h2 className={`${styles.titulo} reveal reveal-delay-1`}>
-            Chelsea Boot.
+            Modelo 01.
           </h2>
 
           <p className={`${styles.desc} reveal reveal-delay-1`}>
@@ -58,7 +58,7 @@ export function Produto() {
           </div>
           <div className={styles.imgWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1608256264403-74a5ab98311e?w=800&q=85&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1608256255256-411200dde1ee?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente natural"
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
