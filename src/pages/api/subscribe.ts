@@ -78,6 +78,13 @@ function saveToFile(email: string) {
   }
 }
 
+async function checkRateLimit(ip: string): Promise<boolean> {
+  const key = `rl:${ip}`
+  const count = await kv.incr(key)
+  if (count === 1) await kv.expire(key, 60)
+  return count > 3
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -96,6 +103,15 @@ export default async function handler(
     let isNew = false
 
     if (kvAvailable) {
+      const ip =
+        (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0].trim() ??
+        (req.headers['x-real-ip'] as string | undefined) ??
+        'unknown'
+
+      if (await checkRateLimit(ip)) {
+        return res.status(429).json({ message: 'Muitas tentativas. Tente em instantes.' })
+      }
+
       await migrateLeadsIfNeeded()
       const added = await kv.sadd(KV_LEADS_KEY, email)
       isNew = added > 0
