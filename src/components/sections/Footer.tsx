@@ -49,7 +49,7 @@ export function Footer() {
           rel="noopener noreferrer"
           className={styles.credits}
         >
-          Desenvolvido por Rafael Mota · Infraestrutura &amp; Cloud
+          Desenvolvido por Rafael Mota • Infraestrutura &amp; Cloud
         </a>
 
       </div>
