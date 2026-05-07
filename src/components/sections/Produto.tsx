@@ -52,7 +52,7 @@ export function Produto() {
               src="https://images.unsplash.com/photo-1577387280394-12fd9389ac86?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente urbano"
               fill
-              sizes="(max-width: 768px) 100vw, 25vw"
+              sizes="(max-width: 768px) 100vw, 240px"
               className={styles.img}
             />
           </div>
@@ -61,7 +61,7 @@ export function Produto() {
               src="https://images.unsplash.com/photo-1608256255256-411200dde1ee?w=800&q=85&auto=format&fit=crop"
               alt="Bota de couro em ambiente natural"
               fill
-              sizes="(max-width: 768px) 100vw, 25vw"
+              sizes="(max-width: 768px) 100vw, 240px"
               className={styles.img}
             />
           </div>

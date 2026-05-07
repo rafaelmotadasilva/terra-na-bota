@@ -20,17 +20,7 @@ export default function Document() {
         <meta name="author" content="Terra na Bota" />
         <meta name="theme-color" content="#3B2F26" />
 
-        {/* ── Open Graph ── */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Terra na Bota" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:image" content="https://terranabota.com.br/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* ── Twitter Card ── */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://terranabota.com.br/og-image.jpg" />
+        {/* OG e Twitter Card: declarados por página em next/head — não duplicar aqui */}
 
         {/* ── JSON-LD: Organization + WebSite ── */}
         <script
