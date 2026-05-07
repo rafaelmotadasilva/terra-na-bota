@@ -22,11 +22,16 @@ const Home: NextPage = () => {
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <link rel="canonical" href={SITE_URL} />
-        {/* Preload do painel esquerdo do hero — elemento LCP */}
+        {/* Preload dos painéis do hero — ambos candidatos ao LCP */}
         <link
           rel="preload"
           as="image"
           href="https://images.unsplash.com/photo-1577387262136-6ac70fb6a070?w=960&q=85&auto=format&fit=crop&crop=bottom"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://images.unsplash.com/photo-1608256264403-74a5ab98311e?w=960&q=85&auto=format&fit=crop&crop=center"
         />
 
         {/* Open Graph */}

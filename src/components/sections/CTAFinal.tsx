@@ -5,6 +5,7 @@ import { useLeadsCount } from '@/lib/useLeadsCount'
 export function CTAFinal() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('Confere o e-mail e tenta de novo.')
   const [lgpd, setLgpd] = useState(false)
   const [lgpdError, setLgpdError] = useState(false)
   const count = useLeadsCount()
@@ -20,7 +21,14 @@ export function CTAFinal() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       })
-      if (!res.ok) throw new Error('subscribe failed')
+      if (!res.ok) {
+        setErrorMessage(
+          res.status === 400
+            ? 'Confere o e-mail e tenta de novo.'
+            : 'Erro interno. Tenta de novo em instantes.'
+        )
+        throw new Error('subscribe failed')
+      }
 
       setStatus('success')
 
@@ -122,9 +130,7 @@ export function CTAFinal() {
             )}
 
             {status === 'error' && (
-              <p className={styles.errorMsg}>
-                Confere o e-mail e tenta de novo.
-              </p>
+              <p className={styles.errorMsg}>{errorMessage}</p>
             )}
 
             <p className={styles.note}>

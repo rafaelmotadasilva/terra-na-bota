@@ -100,6 +100,12 @@ export default async function handler(
       const added = await kv.sadd(KV_LEADS_KEY, email)
       isNew = added > 0
     } else {
+      // Fallback para arquivo local — funciona apenas em dev.
+      // Em produção, configure KV_REST_API_URL e KV_REST_API_TOKEN.
+      if (process.env.NODE_ENV === 'production') {
+        console.error('[subscribe] KV não configurado em produção. Lead não persistido.')
+        return res.status(503).json({ message: 'Serviço indisponível. Tente novamente em instantes.' })
+      }
       const leadsFile = path.join(process.cwd(), 'data', 'leads.json')
       const existing: { email: string }[] = fs.existsSync(leadsFile)
         ? JSON.parse(fs.readFileSync(leadsFile, 'utf-8'))
@@ -108,39 +114,48 @@ export default async function handler(
       saveToFile(email)
     }
 
+    // E-mails via Resend — não bloqueia a resposta em caso de falha
     if (isNew && process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY)
-
-      await Promise.all([
-        resend.emails.send({
-          from: 'Terra na Bota <contato@terranabota.com.br>',
-          to: email,
-          subject: 'Você está dentro. ★',
-          html: CONFIRMATION_HTML,
-        }),
-        process.env.NOTIFY_EMAIL
-          ? resend.emails.send({
-              from: 'Terra na Bota <contato@terranabota.com.br>',
-              to: process.env.NOTIFY_EMAIL,
-              subject: `Novo lead: ${email}`,
-              html: `<p>Novo cadastro na lista de espera: <strong>${email}</strong></p>`,
-            })
-          : Promise.resolve(),
-      ])
+      try {
+        await Promise.all([
+          resend.emails.send({
+            from: 'Terra na Bota <contato@terranabota.com.br>',
+            to: email,
+            subject: 'Você está dentro. ★',
+            html: CONFIRMATION_HTML,
+          }),
+          process.env.NOTIFY_EMAIL
+            ? resend.emails.send({
+                from: 'Terra na Bota <contato@terranabota.com.br>',
+                to: process.env.NOTIFY_EMAIL,
+                subject: `Novo lead: ${email}`,
+                html: `<p>Novo cadastro na lista de espera: <strong>${email}</strong></p>`,
+              })
+            : Promise.resolve(),
+        ])
+      } catch (emailError) {
+        // Lead já salvo — e-mail falhou mas não falha a resposta
+        console.error('[subscribe] Resend error (non-fatal):', emailError)
+      }
     }
 
-    // Google Sheets (configurar SHEETS_WEBHOOK no .env.local para ativar)
+    // Google Sheets — não bloqueia a resposta em caso de falha
     if (process.env.SHEETS_WEBHOOK) {
-      await fetch(process.env.SHEETS_WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
+      try {
+        await fetch(process.env.SHEETS_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        })
+      } catch (webhookError) {
+        console.error('[subscribe] Sheets webhook error (non-fatal):', webhookError)
+      }
     }
 
     return res.status(200).json({ message: 'Cadastrado com sucesso' })
   } catch (error) {
-    console.error('Erro ao cadastrar lead:', error)
+    console.error('[subscribe] Erro ao cadastrar lead:', error)
     return res.status(500).json({ message: 'Erro interno. Tente novamente.' })
   }
 }

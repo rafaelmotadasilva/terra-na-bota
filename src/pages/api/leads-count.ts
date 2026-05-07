@@ -16,6 +16,9 @@ export default async function handler(
     return res.status(405).json({ count: 0 })
   }
 
+  // Cache curto na CDN da Vercel — reduz hits no Redis sem perder precisão
+  res.setHeader('Cache-Control', 'public, s-maxage=30, stale-while-revalidate=60')
+
   try {
     if (kvAvailable) {
       const count = await kv.scard(KV_LEADS_KEY)
