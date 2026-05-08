@@ -10,7 +10,7 @@ import { Footer } from '@/components/sections/Footer'
 import { useReveal } from '@/lib/useReveal'
 
 const SITE_URL = 'https://terranabota.com.br'
-const TITLE = 'Terra na Bota | Estiloso na fazenda. Selvagem na cidade.'
+const TITLE = 'Terra na Bota | Chelsea Boot de Couro — Estiloso na fazenda. Selvagem na cidade.'
 const DESCRIPTION = 'Chelsea boot de couro para quem não escolhe entre o campo e a cidade. Entre na lista e garanta acesso antecipado com preço exclusivo.'
 
 const Home: NextPage = () => {
