@@ -10,8 +10,8 @@ import { Footer } from '@/components/sections/Footer'
 import { useReveal } from '@/lib/useReveal'
 
 const SITE_URL = 'https://terranabota.com.br'
-const TITLE = 'Terra na Bota | Chelsea Boot de Couro — Estiloso na fazenda. Selvagem na cidade.'
-const DESCRIPTION = 'Chelsea boot de couro para quem não escolhe entre o campo e a cidade. Entre na lista e garanta acesso antecipado com preço exclusivo.'
+const TITLE = 'Chelsea Boot de Couro Masculino | Terra na Bota'
+const DESCRIPTION = 'Chelsea boot de couro masculino com identidade country-urbana. Para quem não escolhe entre campo e cidade. Entre na lista e garanta acesso ao primeiro lote.'
 
 const Home: NextPage = () => {
   useReveal()
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         <meta property="og:image" content={`${SITE_URL}/og-image.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Terra na Bota — Estiloso na fazenda. Selvagem na cidade." />
+        <meta property="og:image:alt" content="Chelsea boot de couro masculino - Terra na Bota" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
