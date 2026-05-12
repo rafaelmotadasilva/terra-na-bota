@@ -1,4 +1,4 @@
-# TERRA ★ NA BOTA — Landing Page
+# TERRA ★ NA BOTA -- Landing Page
 
 Stack: Next.js 14 · TypeScript · CSS Modules  
 Deploy: Vercel · Domínio via Cloudflare
@@ -17,17 +17,17 @@ src/
 │       ├── CTAFinal.tsx + CTAFinal.module.css
 │       └── Footer.tsx + Footer.module.css
 ├── lib/
-│   ├── useReveal.ts       — animações de scroll
-│   └── useCounter.ts      — contador de leads
+│   ├── useReveal.ts       -- animações de scroll
+│   └── useCounter.ts      -- contador de leads
 ├── pages/
-│   ├── _document.tsx      — GA4, Meta Pixel, JSON-LD, meta tags
+│   ├── _document.tsx      -- GA4, Meta Pixel, JSON-LD, meta tags
 │   ├── _app.tsx
-│   ├── index.tsx          — página principal
-│   ├── privacidade.tsx    — Política de Privacidade (LGPD)
+│   ├── index.tsx          -- página principal
+│   ├── privacidade.tsx    -- Política de Privacidade (LGPD)
 │   └── api/
-│       └── subscribe.ts   — captura de leads (4 opções de integração)
+│       └── subscribe.ts   -- captura de leads (4 opções de integração)
 └── styles/
-    ├── globals.css         — variáveis, fontes, reset
+    ├── globals.css         -- variáveis, fontes, reset
     └── Privacidade.module.css
 public/
 ├── assets/
@@ -69,8 +69,8 @@ npm run dev
 
 ### Logos
 Copiar do Inkscape para `public/assets/logo/`:
-- `logo-white.svg` — versão branca (fundo escuro)
-- `logo-dark.svg` — versão preta (fundo claro)
+- `logo-white.svg` -- versão branca (fundo escuro)
+- `logo-dark.svg` -- versão preta (fundo claro)
 
 ### Imagem do hero
 Colocar em `public/assets/images/hero.jpg`
@@ -110,7 +110,7 @@ Editar `src/pages/api/subscribe.ts` e escolher uma opção:
 | C | ConvertKit | Grátis até 1.000 contatos | CONVERTKIT_* |
 | D | Brevo | Grátis 300 e-mails/dia | BREVO_* |
 
-**Recomendação para começar:** Opção A (Google Sheets) — zero configuração,
+**Recomendação para começar:** Opção A (Google Sheets), zero configuração,
 zero custo, os leads ficam numa planilha acessível.
 
 ---
@@ -164,7 +164,7 @@ Adicionar todas as variáveis do .env.local.
    Tipo:  CNAME
    Nome:  @ (ou www)
    Valor: cname.vercel-dns.com
-   Proxy: OFF (DNS Only — ícone cinza, não laranja)
+   Proxy: OFF (DNS Only, ícone cinza, não laranja)
 
 4. SSL é gerado automaticamente pela Vercel em ~2 minutos
 ```
