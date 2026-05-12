@@ -51,6 +51,24 @@ const Home: NextPage = () => {
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.jpg`} />
+
+        {/* JSON-LD: Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Terra na Bota',
+              url: 'https://terranabota.com.br',
+              logo: `${SITE_URL}/og-image.jpg`,
+              description: 'Chelsea boot de couro para quem não escolhe entre o campo e a cidade.',
+              sameAs: [
+                'https://www.instagram.com/useterranabota',
+              ],
+            }),
+          }}
+        />
       </Head>
 
       <Navbar />
