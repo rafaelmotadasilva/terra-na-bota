@@ -34,7 +34,7 @@ export function Navbar() {
             }}
           />
           <span className={styles.logoText} style={{ display: 'none' }}>
-            TERRA ★ NA BOTA
+            TERRA <span style={{ color: 'var(--caramelo)' }}>★</span> NA BOTA
           </span>
         </a>
 

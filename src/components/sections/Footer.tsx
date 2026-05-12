@@ -21,7 +21,7 @@ export function Footer() {
         </a>
 
         <p className={styles.frase}>
-          Estiloso na fazenda ★ Selvagem na cidade
+          Estiloso na fazenda <span style={{ color: 'var(--caramelo)' }}>★</span> Selvagem na cidade
         </p>
 
         <div className={styles.links}>
@@ -31,7 +31,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className={styles.instagram}
           >
-            ★ @useterranabota
+            <span style={{ color: 'var(--caramelo)' }}>★</span> @useterranabota
           </a>
           <a href="mailto:contato@terranabota.com.br">
             contato@terranabota.com.br

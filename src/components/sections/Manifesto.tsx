@@ -5,7 +5,7 @@ export function Manifesto() {
     <section className={styles.manifesto} id="manifesto">
       <div className={styles.inner}>
         <div className={styles.sidebar}>
-          <p className={`${styles.label} reveal`}>★ Terra ★ Cidade</p>
+          <p className={`${styles.label} reveal`}><span style={{ color: 'var(--brasa)' }}>★</span> Terra <span style={{ color: 'var(--brasa)' }}>★</span> Cidade</p>
         </div>
         <div className={styles.text}>
           <h2 className="reveal reveal-delay-1">
