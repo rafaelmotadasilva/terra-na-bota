@@ -50,7 +50,7 @@ export function Produto() {
           <div className={styles.imgWrap}>
             <Image
               src="https://images.unsplash.com/photo-1577387280394-12fd9389ac86?w=800&q=85&auto=format&fit=crop"
-              alt="Bota de couro em ambiente urbano"
+              alt="Chelsea boot de couro masculino em ambiente urbano"
               fill
               sizes="(max-width: 768px) 100vw, 240px"
               className={styles.img}
@@ -59,7 +59,7 @@ export function Produto() {
           <div className={styles.imgWrap}>
             <Image
               src="https://images.unsplash.com/photo-1608256255256-411200dde1ee?w=800&q=85&auto=format&fit=crop"
-              alt="Bota de couro em ambiente natural"
+              alt="Chelsea boot de couro masculino em ambiente natural"
               fill
               sizes="(max-width: 768px) 100vw, 240px"
               className={styles.img}
